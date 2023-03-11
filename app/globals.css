@@ -2634,3 +2634,497 @@ input[type="radio"] {
   margin-top: 20px;
   width: 100%;
 }
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 8887;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in-out;
+  /* display: flex; justify-content: center; align-items: center; */
+}
+
+.modalBoxSlideup {
+  /* display: flex;
+align-items: center;
+justify-content: center; */
+
+  animation: slideIn 0.3s ease-in-out;
+  position: relative;
+  z-index: 2; /* One level above the background modal which will close the popup */
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .modalBoxSlideup {
+    max-width: 640px;
+    min-width: 360px;
+  }
+}
+
+/*
+.modalBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
+  padding:50px;
+  border:1px solid #333;
+  background-color: black;
+  min-width:500px;
+}
+*/
+
+.modalBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.92);
+  z-index: 1;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  animation: fadeIn 0.125s ease-in-out;
+}
+
+.modal-content {
+  background-color: white;
+  /* padding: 1rem; */
+  border-radius: 0.5rem;
+  animation: zoomIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navLeft {
+    display: none !important;
+  }
+}
+
+.navLeft {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 0 30px;
+}
+
+/* @media only screen and (min-width: 768px) {    } */
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-top: 50px;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 0px 0;
+}
+
+.menu li {
+  margin-top: 10px;
+  display: block;
+}
+
+.menu li a {
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 2rem;
+}
+
+.menu li:hover a {
+  background: #111;
+}
+
+/* Slightly animate the icon when user hovers */
+.menu li svg {
+  transform: scale(1);
+  transition: 0.22s ease-out all;
+}
+
+.menu li:hover svg {
+  transform: scale(1.05);
+  transition: 0.22s ease-in all;
+}
+
+.menu li .router-link-active {
+  color: #eee;
+}
+
+.menu li .router-link-active svg {
+  animation: beat 0.22s 1 ease-in-out;
+  color: #eee;
+}
+/* Heart beat animation */
+@keyframes beat {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* .router-link-active .navLeft-item.navLeft-item-discover * {
+  stroke-width: 0.5px;
+  stroke: #ffffff;
+} */
+
+.menu li svg {
+  color: white;
+  height: 32px;
+  margin-right: 15px;
+}
+
+/* Check if duplicated */
+
+.feedItem {
+  background: #101010;
+  color: white;
+  border-bottom: 1px solid #222;
+  margin-bottom: var(--space-normal);
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.feedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-xsmall);
+}
+
+.avatar {
+  height: var(--avatar-normal);
+  width: var(--avatar-normal);
+  border-radius: 50%;
+  border: 1px solid #696969;
+  margin: 0;
+}
+
+.feedHeader .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedHeader .name {
+  margin-left: var(--space-xsmall);
+}
+
+.feedHeader .display_name {
+  font-weight: var(--bold);
+  color: var(--fg);
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.feedHeader .bio {
+  line-height: 1.25;
+}
+
+.footer {
+  padding: var(--space-xsmall);
+}
+
+.icon {
+  color: white;
+  display: block;
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.icon:last-child {
+  margin-right: 0;
+}
+
+.header-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.icon svg {
+  color: var(--fg);
+  height: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .navLeft {
+    display: none !important;
+  }
+}
+
+.navLeft {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 0 30px;
+}
+
+/* @media only screen and (min-width: 768px) {    } */
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-top: 50px;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 0px 0;
+}
+
+.menu li {
+  margin-top: 10px;
+  display: block;
+}
+
+.menu li a {
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 2rem;
+}
+
+.menu li:hover a {
+  background: #111;
+}
+
+/* Slightly animate the icon when user hovers */
+.menu li svg {
+  transform: scale(1);
+  transition: 0.22s ease-out all;
+}
+
+.menu li:hover svg {
+  transform: scale(1.05);
+  transition: 0.22s ease-in all;
+}
+
+.menu li .router-link-active {
+  color: #eee;
+}
+
+.menu li .router-link-active svg {
+  animation: beat 0.22s 1 ease-in-out;
+  color: #eee;
+}
+/* Heart beat animation */
+@keyframes beat {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* .router-link-active .navLeft-item.navLeft-item-discover * {
+  stroke-width: 0.5px;
+  stroke: #ffffff;
+} */
+
+.menu li svg {
+  color: white;
+  height: 32px;
+  margin-right: 15px;
+}
+
+.main {
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .navTop {
+    display: none !important;
+  }
+}
+
+.navTop {
+  height: 72px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+}
+
+.navTop ul {
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  list-style-type: none;
+}
+
+.navTop .logo {
+  height: 26px;
+  object-fit: contain;
+}
+
+.navTop svg {
+  color: white;
+}
+
+.navTop ul svg {
+  height: 28px;
+}
+
+.navBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 72px;
+  background-color: black !important;
+}
+
+@media screen and (min-width: 768px) {
+  .navBottom {
+    display: none;
+  }
+}
+
+.navBottom ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.navBottom ul li {
+  transform: translateY(-2px);
+}
+
+.navBottom ul li svg {
+  height: 28px;
+  color: white;
+}
+
+.navBottom ul svg {
+  transition: 0.33s ease-in-out all;
+}
+
+.navBottom ul .router-link-active svg {
+  animation: beat 0.2s 1 ease-in-out;
+  color: #eee;
+}
+
+/* Heart beat animation */
+@keyframes beat {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border-bottom: 2px solid blue;
+}
+
+.tabs > li {
+  padding: 0.5em 1em;
+  margin: 0 1em;
+}
+
+.current {
+  background: white;
+  color: blue;
+  font-weight: bold;
+  border: 2px solid blue;
+  border-bottom: 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  position: relative;
+  top: 2px;
+}
+
+.content {
+  padding: 1em 2em;
+}
