@@ -1,12 +1,10 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 
 /* Temporary Modal Imports */
 import Modal from "../components/Modal";
 
 // Send data to Google Form
-import FormGoogle from "../components/FormGoogle";
+
 import { useModal } from "../providers/modalProvider";
 
 // import { useState } from 'react'
